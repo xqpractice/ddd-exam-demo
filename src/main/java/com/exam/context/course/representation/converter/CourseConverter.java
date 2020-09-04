@@ -1,9 +1,9 @@
 package com.exam.context.course.representation.converter;
 
 import com.exam.context.course.domain.model.Course;
-import com.exam.context.course.domain.model.CourseId;
 import com.exam.context.course.representation.response.CourseResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -15,9 +15,7 @@ public interface CourseConverter {
 
     List<CourseResponse> toResponse(List<Course> courses);
 
+    @Mapping(source = "courseId.id", target = "id")
+    @Mapping(source = "examinationId.id", target = "examinationId")
     CourseResponse toResponse(Course course);
-
-    default String toId(CourseId courseId) {
-        return courseId.getId();
-    }
 }

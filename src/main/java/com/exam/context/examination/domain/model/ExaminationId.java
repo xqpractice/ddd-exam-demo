@@ -1,7 +1,6 @@
 package com.exam.context.examination.domain.model;
 
 import com.exam.context.common.ValueObject;
-import com.exam.context.course.domain.model.CourseId;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
